@@ -1,7 +1,5 @@
-<div class="{{ class | default: '' }}" style="{{ style | default: '' }}">
-	{% for link in linklists.main-menu.links %}
-	<a href="{{ link.url }}" class="{{ link_class | default: '' }}">
-		{{ link.title }}
-	</a>
-	{% endfor %}
-</div>
+{% for link in linklists.main-menu.links %}
+<a href="{{ link.url }}" class="{{ class | default: '' }}">
+	{{ link.title }}
+</a>
+{% endfor %}

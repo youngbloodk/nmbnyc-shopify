@@ -1,16 +1,13 @@
 {
   "sections": {
-    "section-banner": {
-      "type": "section-banner",
+    "section-full-page-image": {
+      "type": "section-full-page-image",
       "settings": {
-        "headline": "Headline",
-        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quos hic praesentium recusandae dolores odio animi deleniti officia cum itaque.",
-        "button-url": "\/",
-        "button-text": "Button"
+        "image": "shopify:\/\/shop_images\/Cover_Photo.jpg"
       }
     }
   },
   "order": [
-    "section-banner"
+    "section-full-page-image"
   ]
 }

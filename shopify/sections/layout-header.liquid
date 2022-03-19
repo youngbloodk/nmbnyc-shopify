@@ -1,21 +1,19 @@
-{% assign link_class = 'uppercase' %}
+{% assign link_class = 'uppercase text-sm' %}
 
-<div class="bg-transparent">
-	<div class="flex justify-between items-center">
-		<a href="{{ routes.root_url }}"> <img class="w-40" src="{{ section.settings.logo | img_url: 'large' }}" /> </a>
+<div class="fixed w-full flex justify-between items-center bg-transparent p-4 z-50">
+	<a href="{{ routes.root_url }}"> <img class="w-28" src="{{ section.settings.logo | img_url }}" /> </a>
 
-		<div class="flex space-x-4 lg:space-x-6">
-			<div class="hidden md:block">{% render 'layout-menu', class: 'space-x-4', link_class: link_class %}</div>
+	<div class="flex space-x-4">
+		<div class="hidden md:flex space-x-4">{% render 'layout-menu', class: link_class %}</div>
 
-			<a href="{{ routes.cart_url }}" class="{{ link_class }} relative">
-				{{ 'action.cart' | t }}
+		<a href="{{ routes.cart_url }}" class="{{ link_class }}">
+			{{ 'action.cart' | t }}
 
-				{% if cart.item_count > 0 %}
-				<div class="w-5 h-5 flex justify-center items-center bg-black text-white text-xs border border-white rounded-full absolute top-0 right-0">{{ cart.item_count }}0</div>
-				{% endif %}
-			</a>
-		</div>
+			{% if cart.item_count > 0 %}
+			<div class="w-5 h-5 flex justify-center items-center bg-black text-white text-xs border border-white rounded-full absolute top-0 right-0">{{ cart.item_count }}0</div>
+			{% endif %}
+		</a>
 	</div>
 </div>
 
-{% schema %} { "name": "t:sections.header.name", "settings": [ { "type": "paragraph", "content": "t:sections.header.settings.paragraph" }, { "type": "image_picker", "id": "logo", "label": "Logo" } ] } {% endschema %}
+{% schema %} { "name": "t:sections.header.name", "settings": [ { "type": "paragraph", "content": "t:sections.header.settings.paragraph" }, { "type": "image_picker", "id": "logo", "label": "t:common.image" } ] } {% endschema %}

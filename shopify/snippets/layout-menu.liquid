@@ -1,5 +1,23 @@
 {% for link in linklists.main-menu.links %}
-<a href="{{ link.url }}" class="{{ class | default: '' }}">
-	{{ link.title }}
-</a>
+    {% if link.links != blank %}
+        <renderless-menu-dropdown v-slot="{ open, show, hide }">
+            <div class="relative flex flex-col justify-center">
+                <a href="{{ link.url }}" class="{{class}}" @mouseover="show" {% if link.active %} aria-current="page" {% endif %}>
+                    {{ link.title }}
+                </a>
+                <div @mouseleave="hide" class="flex flex-col absolute top-0 pt-5 -ml-[30px] object-center z-0" v-show="open">
+                    {% for childLink in link.links %}
+                        <a href="{{ childLink.url }}" class="{{class}}" {% if link.active %} aria-current="page" {% endif %}>
+                            {{ childLink.title }}
+                        </a>
+                    {% endfor %}
+                </div>
+
+            </div>
+        </renderless-menu-dropdown>
+    {% else %}
+        <a href="{{ link.url }}" class="{{class}}" {% if link.active %} aria-current="page" {% endif %}>
+            {{ link.title }}
+        </a>
+    {% endif %}
 {% endfor %}

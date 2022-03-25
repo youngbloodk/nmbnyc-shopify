@@ -1,7 +1,28 @@
 {% assign image = section.settings.image %}
 
+<render-ripple-image image="{{ image.src | img_url: '' }}"></render-ripple-image>
 <div class="max-h-screen overflow-hidden bg-cover">
-	<img src="{{ image | img_url: '' }}" alt="{{ image.alt }}" loading="lazy" class="object-cover min-w-full min-h-screen -z-10" />
+    <!-- <img src="{{ image.src | img_url: '' }}" alt="{{ image.alt }}" loading="lazy" class="object-cover min-w-full min-h-screen -z-10"/> -->
 </div>
 
-{% schema %} { "name": "t:sections.full-page-image.name", "class": "shopify-section-vue", "settings": [ { "type": "image_picker", "id": "image", "label": "t:common.image" } ], "presets": [ { "name": "t:sections.full-page-image.name", "category": "Image" } ] } {% endschema %}
+{% schema %}
+
+{
+    "name": "t:sections.full-page-image.name",
+    "class": "shopify-section-vue",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "t:common.image"
+        }
+    ],
+    "presets": [
+        {
+            "name": "t:sections.full-page-image.name",
+            "category": "Image"
+        }
+    ]
+}
+
+{% endschema %}

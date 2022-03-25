@@ -25,7 +25,7 @@
 
 .slide-mobile-menu-enter-from,
 .slide-mobile-menu-leave-to {
-  @apply transform translate-x-full opacity-0;
+  @apply opacity-0;
 }
 
 /**

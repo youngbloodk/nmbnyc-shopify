@@ -8,10 +8,10 @@ const path = require('path')
 
 module.exports = {
 	theme: {
-		extend: {},
-		container: {
-			center: true,
-			padding: '1rem',
+		extend: {
+			fontFamily: {
+				syne: ['Syne', 'icons'],
+			},
 		},
 	},
 	plugins: [require('@tailwindcss/typography'), require('@tailwindcss/forms'), require('@tailwindcss/line-clamp'), require('@tailwindcss/aspect-ratio')],

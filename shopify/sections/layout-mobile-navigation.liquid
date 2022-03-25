@@ -1,5 +1,17 @@
 <div class="md:hidden fixed right-4 bottom-4">
-	<button @click="$store.dispatch('mobile-menu/toggle')" class="">{% render 'icon-menu', class: icon_class %}</button>
+    <button @click="$store.dispatch('mobile-menu/toggle')">
+        <div v-if="!$store.state['mobile-menu'].visible">
+            {% render 'icon-menu', class: 'w-10 h-auto -mb-1' %}
+        </div>
+
+    </button>
 </div>
 
-{% schema %} { "name": "t:sections.mobile-navigation.name", "class": "mobile-navigation" } {% endschema %}
+{% schema %}
+
+{
+    "name": "t:sections.mobile-navigation.name",
+    "class": "mobile-navigation"
+}
+
+{% endschema %}

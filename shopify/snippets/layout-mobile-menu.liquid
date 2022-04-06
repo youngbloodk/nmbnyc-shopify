@@ -1,25 +1,21 @@
 {% assign link_class = 'uppercase text-[35px] text-white font-syne font-bold' %}
 
 <div @click="$store.dispatch('mobile-menu/toggle')" class="fixed w-full h-full flex items-center justify-center md:hidden bg-[#00000031] backdrop-blur-md z-50" v-if="$store.state['mobile-menu'].visible">
-    <button class="absolute bottom-4 right-4">
-        {% render 'icon-cancel', class: 'w-10 h-auto text-white' %}
-    </button>
-    <div class="flex flex-col items-center object-center">
-        {% for link in linklists.main-menu.links %}
-            {% if link.links != blank %}
-                <a href="{{ link.url }}" class="{{link_class}}" @mouseover="show" {% if link.active %} aria-current="page" {% endif %}>
-                    {{ link.title }}
-                </a>
-                {% for childLink in link.links %}
-                    <a href="{{ childLink.url }}" class="{{link_class}}" {% if link.active %} aria-current="page" {% endif %}>
-                        {{ childLink.title }}
-                    </a>
-                {% endfor %}
-            {% else %}
-                <a href="{{ link.url }}" class="{{link_class}}" {% if link.active %} aria-current="page" {% endif %}>
-                    {{ link.title }}
-                </a>
-            {% endif %}
-        {% endfor %}
-    </div>
+	<button class="absolute bottom-4 right-4">{% render 'icon-cancel', class: 'w-10 h-auto text-white' %}</button>
+	<div class="flex flex-col items-center object-center">
+		{% for link in linklists.main-menu.links %} {% if link.links != blank %}
+		<a href="{{ link.url }}" class="{{ link_class }}" @mouseover="show" {% if link.active %} aria-current="page" {% endif %}>
+			{{ link.title }}
+		</a>
+		{% for childLink in link.links %}
+		<a href="{{ childLink.url }}" class="{{ link_class }}" {% if link.active %} aria-current="page" {% endif %}>
+			{{ childLink.title }}
+		</a>
+		{% endfor %} {% else %}
+		<a href="{{ link.url }}" class="{{ link_class }}" {% if link.active %} aria-current="page" {% endif %}>
+			{{ link.title }}
+		</a>
+		{% endif %} {% endfor %}
+		<a href="/account" class="{{ link_class }}" {% if link.active %} aria-current="page" {% endif %}> Account </a>
+	</div>
 </div>

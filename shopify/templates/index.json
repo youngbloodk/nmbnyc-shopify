@@ -3,7 +3,8 @@
     "section-full-page-image": {
       "type": "section-full-page-image",
       "settings": {
-        "image": "shopify:\/\/shop_images\/Cover_Photo.jpg"
+        "image": "shopify:\/\/shop_images\/Cover_Photo.jpg",
+        "video": "https:\/\/nmb.nyc3.cdn.digitaloceanspaces.com\/nmbnyc-ripple.mp4"
       }
     }
   },

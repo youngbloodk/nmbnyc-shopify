@@ -10,7 +10,15 @@ module.exports = {
 	theme: {
 		extend: {
 			fontFamily: {
-				syne: ['Syne', 'icons'],
+				syne: ['Syne'],
+				neue: ['Neue Haas Grotesk'],
+			},
+			typography: {
+				DEFAULT: {
+					css: {
+						color: '#000000',
+					},
+				},
 			},
 		},
 	},

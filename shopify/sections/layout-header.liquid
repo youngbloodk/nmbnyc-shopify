@@ -1,39 +1,25 @@
-{% assign link_class = 'uppercase text-sm text-center hover:text-gray-600 z-10' %}
+{% assign link_class = 'font-neue uppercase text-sm text-center hover:text-gray-600 z-10' %}
 
-<div class="fixed w-full flex justify-between items-center bg-transparent  p-4 z-50">
-    <a href="{{ routes.root_url }}">
-        <img class="w-28" src="{{ section.settings.logo.src | img_url: 'large' }}"/>
-    </a>
+<div class="fixed w-full flex justify-between items-center bg-transparent p-4 z-50">
+	<a href="{{ routes.root_url }}">
+		<img class="w-[110px]" src="{{ section.settings.logo.src | img_url: 'large' }}" />
+	</a>
 
-    <div class="flex space-x-4">
-        <div class="hidden md:flex space-x-4">
-            {% render 'layout-menu' class: link_class %}
-        </div>
-        <a href="{{ routes.cart_url }}" class="relative flex space-x-1 items-center {{ link_class }}">
-            <div class="font-bold md:font-normal">
-                {{ 'action.cart' | t }}
-            </div>
-            {% if cart.item_count > 0 %}
-                <div class="font-bold md:font-normal">({{ cart.item_count }})</div>
-            {% endif %}
-        </a>
-    </div>
+	<div class="flex space-x-4">
+		<div class="hidden md:flex space-x-4">
+			{% render 'layout-menu' class: link_class %}
+			<a href="/account" class="{{ link_class }}">Account</a>
+		</div>
+
+		<a href="{{ routes.cart_url }}" class="relative flex space-x-1 items-center {{ link_class }}">
+			<div class="font-bold md:font-normal">
+				{{ 'action.cart' | t }}
+			</div>
+			{% if cart.item_count > 0 %}
+			<div class="font-bold md:font-normal">({{ cart.item_count }})</div>
+			{% endif %}
+		</a>
+	</div>
 </div>
 
-{% schema %}
-
-{
-    "name": "t:sections.header.name",
-    "settings": [
-        {
-            "type": "paragraph",
-            "content": "t:sections.header.settings.paragraph"
-        }, {
-            "type": "image_picker",
-            "id": "logo",
-            "label": "t:common.image"
-        }
-    ]
-}
-
-{% endschema %}
+{% schema %} { "name": "t:sections.header.name", "settings": [ { "type": "paragraph", "content": "t:sections.header.settings.paragraph" }, { "type": "image_picker", "id": "logo", "label": "t:common.image" } ] } {% endschema %}

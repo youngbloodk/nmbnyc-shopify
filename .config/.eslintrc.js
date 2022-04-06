@@ -30,12 +30,7 @@ module.exports = {
     // '**/my-directory/*.js'
   ],
   rules: {
-    /**
-     * add custom rules
-     * docs: https://eslint.org/docs/rules
-     */
-    'no-unused-vars': isDevelopment ? 'off' : 'error',
-    // 'quotes': ['error', 'single'],
-    // 'semi': ['error', 'never']
+    'no-unused-vars': isDevelopment? 'off':'error',
+    "vue/this-in-template": "off"
   }
 }

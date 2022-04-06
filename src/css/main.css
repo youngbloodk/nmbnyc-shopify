@@ -2,12 +2,41 @@
  * entry file for Tailwind CSS
  * and other style files
  */
-@import "tailwindcss/base";
-@import "tailwindcss/components";
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
 
-@import "_buttons";
-@import "_forms";
-@import "_mobile-navigation";
-@import "_transitions";
+@import '_buttons';
+@import '_forms';
+@import '_mobile-navigation';
+@import '_transitions';
 
-@import "tailwindcss/utilities";
+@import 'tailwindcss/utilities';
+@font-face {
+	font-family: 'Neue Haas Grotesk';
+	src: url('../fonts/NHaasGroteskTXPro-55Rg.ttf');
+	font-weight: normal;
+}
+@font-face {
+	font-family: 'Neue Haas Grotesk';
+	src: url('../fonts/NHaasGroteskTXPro-75Bd.ttf');
+	font-weight: bold;
+}
+@layer base {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@apply font-syne;
+		@apply uppercase;
+	}
+	h1 {
+		@apply text-2xl md:text-3xl font-bold uppercase font-syne text-center mb-6;
+	}
+	,
+	body {
+		@apply font-neue;
+		@apply text-black;
+	}
+}

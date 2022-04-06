@@ -4,6 +4,7 @@
 import { createApp } from 'vue'
 import { createStore } from 'vuex'
 import './css/main.css'
+import VueAgile from 'vue-agile'
 
 /**
  * vuex
@@ -68,7 +69,9 @@ const createVueApp = () => {
 	 * vue plugins
 	 * extend with additional features
 	 */
+
 	app.use(store)
+	app.use(VueAgile)
 
 	return app
 }

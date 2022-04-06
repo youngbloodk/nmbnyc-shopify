@@ -1,23 +1,14 @@
-<div class="p-2">
-    {% if collection.description != blank %}
-        <p class="max-w-screen-sm mx-auto md:-mt-6 mb-6 md:mb-12">
-            {{ collection.description }}
-        </p>
-    {% endif %}
-    {% paginate collection.products by 15 %}
-        {% if collection and collection.products %}
-            {% assign amount = collection.all_products_count %}
+<div class="p-2 pb-24">
+	{% if collection.description != blank %}
+	<p class="max-w-screen-sm mx-auto md:-mt-6 mb-6 md:mb-12">
+		{{ collection.description }}
+	</p>
+	{% endif %} {% if collection and collection.products %} {% assign amount = collection.all_products_count %}
 
-            <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-2">
-                {% for product in collection.products %}
-                    {% render 'layout-product', product: product %}
-                {% endfor %}
-            </div>
-        {% else %}
-            <div>
-                {{ 'common.no_products' | t }}
-            </div>
-        {% endif %}
-        {% render 'layout-pagination', paginate: paginate %}
-    {% endpaginate %}
+	<div class="grid sm:grid-cols-2 md:grid-cols-3 gap-2">{% for product in collection.products %} {% render 'layout-product', product: product %} {% endfor %}</div>
+	{% else %}
+	<div>
+		{{ 'common.no_products' | t }}
+	</div>
+	{% endif %}
 </div>

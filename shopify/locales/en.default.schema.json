@@ -6,6 +6,7 @@
 		"link": "Link",
 		"author": "Author",
 		"image": "Image",
+		"video": "Video",
 		"collection": "Collection",
 		"button": {
 			"text": "Button text",
@@ -69,6 +70,18 @@
 		},
 		"hero": {
 			"name": "Hero",
+			"settings": {}
+		},
+		"about": {
+			"name": "About",
+			"settings": {}
+		},
+		"upcycling": {
+			"name": "Upcycling",
+			"settings": {}
+		},
+		"press": {
+			"name": "Press",
 			"settings": {}
 		},
 		"image-row": {

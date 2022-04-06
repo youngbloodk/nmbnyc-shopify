@@ -1,0 +1,7 @@
+<div class="py-24 px-4 sm:px-20 min-h-screen" style="background-color: {{ section.settings.background }};">
+	<div class="prose sm:columns-2 max-w-none">
+		{{ page.content }}
+	</div>
+</div>
+
+{% schema %} { "name": "t:sections.upcycling.name", "class": "shopify-section-vue", "settings": [ { "type": "color", "id": "background", "label": "Background Color" } ] } {% endschema %}

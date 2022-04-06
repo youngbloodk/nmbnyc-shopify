@@ -1,0 +1,18 @@
+{% assign image = section.settings.image %}
+
+<div class="pt-2 pb-24 px-2 md:px-20 md:py-24">
+	<div class="md:grid md:grid-cols-2">
+		<div class="relative md:row-start-1 md:col-start-2">
+			<div class="w-full overflow-hidden sm:max-h-[600px] md:max-h-none md:px-2">
+				<img class="object-cover object-top" src="{{ image.src | img_url: '1024x1024' }}" alt="{{ image.alt }}" />
+			</div>
+		</div>
+		<div class="px-4 relative -mt-40 md:mt-0 md:px-2">
+			<div class="p-4 md:p-0 prose max-w-none bg-white bg-opacity-70 backdrop-blur-md">
+				{{ page.content }}
+			</div>
+		</div>
+	</div>
+</div>
+
+{% schema %} { "name": "t:sections.about.name", "class": "shopify-section-vue", "settings": [ { "type": "image_picker", "id": "image", "label": "t:common.image" } ] } {% endschema %}

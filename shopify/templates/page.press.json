@@ -1,0 +1,32 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page-press",
+      "blocks": {
+        "df1856b3-81d2-4121-9e3a-2390b770aab6": {
+          "type": "press",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame-121.png",
+            "link": ""
+          }
+        },
+        "3d055cd1-5dd5-46c5-a7f4-c02bb95ccf48": {
+          "type": "press",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame-122.png",
+            "link": "https:\/\/www.instagram.com\/p\/CZfK4srLyCz\/"
+          }
+        }
+      },
+      "block_order": [
+        "df1856b3-81d2-4121-9e3a-2390b770aab6",
+        "3d055cd1-5dd5-46c5-a7f4-c02bb95ccf48"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

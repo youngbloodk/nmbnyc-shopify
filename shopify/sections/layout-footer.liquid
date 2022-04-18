@@ -1,64 +1,9 @@
-<div class="hidden p-4">
-    <div class="text-sm">&copy;
-        {{ 'now' | date: '%Y' }}
-        {{ shop.name }}</div>
+<div class="fixed bottom-0 p-4">
+	{% if request.page_type == "index" %}
+	<a href="{{ section.settings.link }}">
+		<img src="{{ section.settings.image | img_url: '400x' }}" alt="{{ section.settings.image.alt }}" class="w-28" />
+	</a>
+	{% endif %}
 </div>
 
-{% schema %}
-
-{
-    "name": "t:sections.footer.name",
-    "settings": [
-        {
-            "type": "header",
-            "content": "t:sections.footer.settings.header.content",
-            "info": "t:sections.footer.settings.header.info"
-        }, {
-            "type": "header",
-            "content": "Instagram"
-        }, {
-            "type": "checkbox",
-            "id": "social_instagram_visible",
-            "label": "t:sections.footer.settings.show-icon"
-        }, {
-            "type": "url",
-            "id": "social_instagram_link",
-            "label": "t:common.link"
-        }, {
-            "type": "header",
-            "content": "Twitter"
-        }, {
-            "type": "checkbox",
-            "id": "social_twitter_visible",
-            "label": "t:sections.footer.settings.show-icon"
-        }, {
-            "type": "url",
-            "id": "social_twitter_link",
-            "label": "t:common.link"
-        }, {
-            "type": "header",
-            "content": "Facebook"
-        }, {
-            "type": "checkbox",
-            "id": "social_facebook_visible",
-            "label": "t:sections.footer.settings.show-icon"
-        }, {
-            "type": "url",
-            "id": "social_facebook_link",
-            "label": "t:common.link"
-        }, {
-            "type": "header",
-            "content": "Youtube"
-        }, {
-            "type": "checkbox",
-            "id": "social_youtube_visible",
-            "label": "t:sections.footer.settings.show-icon"
-        }, {
-            "type": "url",
-            "id": "social_youtube_link",
-            "label": "t:common.link"
-        }
-    ]
-}
-
-{% endschema %}
+{% schema %} { "name": "t:sections.footer.name", "settings": [{ "type": "image_picker", "id": "image", "label": "Featured Image" }, { "type": "url", "id": "link", "label": "Link" }] } {% endschema %}

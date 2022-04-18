@@ -18,14 +18,8 @@
       "layout-footer": {
         "type": "layout-footer",
         "settings": {
-          "social_instagram_visible": false,
-          "social_instagram_link": "",
-          "social_twitter_visible": false,
-          "social_twitter_link": "",
-          "social_facebook_visible": false,
-          "social_facebook_link": "",
-          "social_youtube_visible": false,
-          "social_youtube_link": ""
+          "image": "shopify:\/\/shop_images\/Asset_1.png",
+          "link": "https:\/\/www.forbes.com\/sites\/angelalei\/2021\/08\/26\/augusts-best-fashion-edit-for-the-upcoming-labor-day-long-weekend\/?sh=605892f77611"
         }
       },
       "layout-mobile-navigation": {
